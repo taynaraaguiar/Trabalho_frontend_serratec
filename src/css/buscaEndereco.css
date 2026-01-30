@@ -1,0 +1,199 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ALTURA TOTAL */
+html, body {
+    height: 100%;
+}
+
+/* BODY */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-image:
+        url(../img/fundoMapa.png),
+        url(../img/fundo.jpg);
+
+    background-repeat:
+        no-repeat,
+        no-repeat;
+
+    background-position:
+        right 40px bottom 60px,
+        center;
+
+    background-size:
+        440px auto,
+        cover;
+
+    background-attachment:
+        fixed,
+        fixed;
+}
+
+/* ================= HEADER ================= */
+header {
+    width: 100%;
+}
+
+/* NAVBAR SEM FUNDO */
+.navbar {
+    background: transparent !important;
+    padding: 15px 50px !important;
+}
+
+/* LOGO */
+.logo {
+    width: 140px;
+}
+
+/* ================= MAIN ================= */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px 20px 0;
+}
+
+/* ================= CARD ================= */
+.card-custom {
+    width: 100%;
+    max-width: 880px;
+    padding: 45px 55px;
+
+    /* leve deslocamento para a direita */
+    transform: translateX(60px);
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #f1f3f6
+    );
+
+    border-radius: 24px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* TÍTULO */
+.card-custom h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+/* SUBTÍTULO */
+.card-custom p {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 35px;
+}
+
+/* LABELS */
+.card-custom label {
+    color: #333;
+    font-weight: 600;
+}
+
+/* INPUTS */
+.card-custom input {
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+/* ================= BOTÕES ================= */
+.btn-warning,
+.btn-outline-warning {
+    background-color: #ffde59;
+    border-color: #ffde59;
+    color: #585858;
+    font-weight: 600;
+}
+
+.btn-warning:hover,
+.btn-outline-warning:hover {
+    background-color: #585858;
+    color: #ffde59;
+    border-color: #ffde59;
+}
+
+/* ================= LINK CEP ================= */
+.link-cep {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.link-cep a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.link-cep a:hover {
+    text-decoration: underline;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    width: 100%;
+    padding: 14px 0;
+    text-align: center;
+
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* ================= ANIMAÇÃO ================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px) translateX(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) translateX(60px);
+    }
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+
+    body {
+        background-image: url(../img/fundo.jpg);
+    }
+
+    main {
+        align-items: center;
+    }
+
+    .card-custom {
+        transform: none;
+        padding: 30px 25px;
+        max-width: 100%;
+    }
+
+    .navbar {
+        padding: 10px 20px !important;
+    }
+
+    .card-custom h1 {
+        font-size: 1.7rem;
+    }
+}

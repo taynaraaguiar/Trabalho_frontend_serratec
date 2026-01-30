@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Consulta de CEP | ViaCEP</title>
+
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/buscaEndereco.css" />
+
+  <!-- Bootstrap -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+    crossorigin="anonymous"
+  />
+
+  <!-- SweetAlert -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <a class="navbar-brand" href="#">
+        <img class="logo" src="../img/logoViaCep.png" alt="Logo ViaCEP" />
+      </a>
+
+      <button
+        class="btn btn-outline-warning"
+        type="button"
+        onclick="pagLogin()"
+      >
+        Início
+      </button>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <div class="card-custom">
+
+      <h1>Consulta de Endereço</h1>
+      <p>Digite o CEP para preencher os dados automaticamente</p>
+
+      <form onsubmit="return pesquisacep()" method="get">
+
+        <!-- CEP -->
+        <div class="form-row align-items-end">
+          <div class="form-group col-md-4">
+            <label for="cep">CEP</label>
+            <input
+              type="text"
+              id="cep"
+              name="cep"
+              class="form-control"
+              placeholder="00000-000"
+            />
+          </div>
+
+          <div class="form-group col-md-3">
+            <button type="submit" class="btn btn-warning">
+              Verificar
+            </button>
+          </div>
+
+          <div class="form-group col-md-5 link-cep">
+            Não sabe seu CEP?
+            <a
+              href="https://buscacepinter.correios.com.br/app/endereco/index.php"
+              target="_blank"
+            >
+              Consulte aqui
+            </a>
+          </div>
+        </div>
+
+        <!-- RESULTADOS -->
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label>Cód. IBGE</label>
+            <input class="form-control" id="ibge" disabled />
+          </div>
+
+          <div class="form-group col-md-9">
+            <label>Logradouro</label>
+            <input class="form-control" id="logradouro" disabled />
+          </div>
+
+          <div class="form-group col-md-4">
+            <label>Bairro</label>
+            <input class="form-control" id="bairro" disabled />
+          </div>
+
+          <div class="form-group col-md-5">
+            <label>Cidade</label>
+            <input class="form-control" id="cidade" disabled />
+          </div>
+
+          <div class="form-group col-md-3">
+            <label>Estado</label>
+            <input class="form-control" id="uf" disabled />
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&#9829; by Taynara Aguiar &#9829;</p>
+  </footer>
+
+  <!-- JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="../js/buscaEndereco.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
